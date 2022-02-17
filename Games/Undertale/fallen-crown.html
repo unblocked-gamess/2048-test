@@ -6,14 +6,13 @@
 -->
 <html>
   <script>
-    var url = "https://mywebsite.com";
-    var appName = "MyApp";
+    var url = "https://unblocked-gamess.github.io/unblocked-games/Undertale/Fallen-Crown.html";
   </script>
   <body>
     <div id="mainContainer">
       <span id="titleText"></span>
       <br />
-      <button id="openBtn" class="grow">Launch</button>
+      <button id="openBtn" class="grow">Click To Play</button>
     </div>
 
     <script>
@@ -22,7 +21,7 @@
       if (url) {
         var win;
         var titleText = document.getElementById("titleText");
-        titleText.textContent = "Press Button to Launch " + appName;
+        titleText.textContent = "Click To Play ";
 
         document.getElementById("mainContainer").style.display = "block";
         document.getElementById("openBtn").onclick = function() {
@@ -45,11 +44,11 @@
               if (win.closed) {
                 clearInterval(interval);
                 win = undefined;
-                titleText.textContent = appName + " closed. Click button to reopen.";
+                titleText.textContent = "The Game Was Closed. Click The Button Again To Reopen.";
               }
             }, 500);
 
-            titleText.textContent = appName + " is running. Click the button to switch to that tab.";
+            titleText.textContent = "The Game is running. Click the button to switch to that tab.";
           }
         };
       }
