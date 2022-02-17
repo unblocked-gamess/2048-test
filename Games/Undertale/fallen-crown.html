@@ -21,7 +21,7 @@
       if (url) {
         var win;
         var titleText = document.getElementById("titleText");
-        titleText.textContent = "Click To Play ";
+        titleText.textContent = " ";
 
         document.getElementById("mainContainer").style.display = "block";
         document.getElementById("openBtn").onclick = function() {
@@ -48,7 +48,7 @@
               }
             }, 500);
 
-            titleText.textContent = "The Game is running. Click the button to switch to that tab.";
+            titleText.textContent = "The Game is currently running. Click the button to switch to that tab.";
           }
         };
       }
