@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html>
   <script>
-    var url = "https://unblocked-gamess.github.io/gametime-player/index.html"
-    function openPage() {
-      var win;
-      win = window.open();
-      win.document.body.style.margin = "0";
-      win.document.body.style.height = "100vh";
-      var iframe = win.document.createElement("iframe");
-      iframe.style.border = "none";
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
-      iframe.style.margin = "0";
-      iframe.src = url;
-      win.document.body.appendChild(iframe);
-    }
+    var url = "https://unblocked-gamess.github.io/gametime-player/index.html";
   </script>
-  <body onload="openPage()">
+  <body>
+    <div id="mainContainer">
+      <span id="titleText"></span>
+      <body onload="function()">
+    </div>
+
+    <script>
+      var urlObj = new window.URL(window.location.href);
+
+      if (url) {
+        var win;
+        var titleText = document.getElementById("titleText");
+        titleText.textContent = " ";
+
+        document.getElementById("mainContainer").style.display = "block";
+        function() {
+          if (win) {
+            win.focus();
+          } 
+          else {
+            win = window.open();
+            win.document.body.style.margin = "0";
+            win.document.body.style.height = "100vh";
+            var iframe = win.document.createElement("iframe");
+            iframe.style.border = "none";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.margin = "0";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+
+            var interval = setInterval(function() {
+              if (win.closed) {
+                clearInterval(interval);
+                win = undefined;
+                titleText.textContent = "The Game Was Closed. Click The Button Again To Reopen.";
+              }
+            }, 500);
+
+            titleText.textContent = "The Game is currently running. Click the button to switch to that tab.";
+          }
+        };
+      }
+    </script>
+    <style>
+      * {
+        color: white;
+        font-family: arial;
+        text-align: center;
+        margin: 10px;
+      }
+      #openBtn {
+        width: 220px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: #ab6afb;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        transition: all 250ms ease-in-out;
+      }
+      #openBtn:hover {
+        background-color: #BB86FC;
+        transform: scale(1.1);
+      }
+    </style>
   </body>
 </html>
