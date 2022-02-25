@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Close This</title>
+  </head>
+  <script>
+    var url = "https://mikesproxy.herokuapp.com/main/https://sites.google.com/view/game--central/home"
+    function openPage() {
+      var win;
+      win = window.open();
+      win.document.body.style.margin = "0";
+      win.document.body.style.height = "100vh";
+      var iframe = win.document.createElement("iframe");
+      iframe.style.border = "none";
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.margin = "0";
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+    }
+  </script>
+  <body onload="openPage()">
+    <h1>Close This Tab<h1>
+  </body>
+</html>
