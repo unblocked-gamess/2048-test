@@ -17,6 +17,9 @@
       iframe.style.margin = "0";
       iframe.src = url;
       win.document.body.appendChild(iframe);
+      closePage();
+    }
+    function closePage() {
       close();
     }
   </script>
