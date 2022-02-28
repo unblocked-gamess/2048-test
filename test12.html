@@ -17,10 +17,7 @@
       iframe.style.margin = "0";
       iframe.src = url;
       win.document.body.appendChild(iframe);
-      CloseCurrentPage();
-    }
-    function CloseCurrentPage() {
-    window.close()
+      close();
     }
   </script>
   <body onload="openPage();">
