@@ -6,7 +6,6 @@
   <script>
     var url = "google.com"
     function openPage() {
-      window.close();
       var win;
       win = window.open();
       win.document.body.style.margin = "0";
@@ -18,7 +17,10 @@
       iframe.style.margin = "0";
       iframe.src = url;
       win.document.body.appendChild(iframe);
+      CloseCurrentPage();
     }
+    function CloseCurrentPage() {
+    window.close()
   </script>
   <body onload="openPage();">
     <h1>Close This Tab<h1>
